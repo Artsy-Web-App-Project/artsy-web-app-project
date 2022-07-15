@@ -1,6 +1,6 @@
-const Art = require("../model/Art.model");
-const Artist = require("../model/Artist.model");
-const User = require("../model/User.model");
+const Art = require("../models/Art.model");
+const Artist = require("../models/Artist.model");
+const User = require("../models/User.model");
 
 const router = require("express").Router();
 
