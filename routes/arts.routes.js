@@ -1,10 +1,10 @@
 const Art = require("../models/Art.model");
 const Artist = require("../models/Artist.model");
-const User = require("../models/User.model");
+//const User = require("../models/User.model");
 
 const router = require("express").Router();
 
-const checkIfLoggedIn = require("../middleware/checkIfLoggedIn");
+const checkIfLoggedIn = require("../middleware/isLoggedIn");
 
 
 
