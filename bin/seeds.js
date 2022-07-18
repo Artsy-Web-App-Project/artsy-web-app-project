@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Art = require('../models/Art.model');
 const Artist = require('../models/Artist.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/artsy-web-app-project';
+const MONGO_URI = process.env.MONGODB_URI;
+//  || 'mongodb://localhost/artsy-web-app-project';
 
 
 const arts = [
