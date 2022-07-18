@@ -9,3 +9,11 @@ a {
 h1 {
   color: 15px;
 }
+
+.btn-dark-moon {
+  background: #262b35;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #98acc3, #262b35);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #98acc3, #262b35); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  border: 3px solid #eee;
+}
