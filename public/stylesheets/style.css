@@ -9,3 +9,12 @@ a {
 h1 {
   color: 15px;
 }
+
+.art-img {
+  width: 400px;
+}
+
+.map {
+  height: 400px;
+  width: 80%;
+}

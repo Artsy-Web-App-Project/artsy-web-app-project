@@ -1,8 +1,8 @@
 const Art = require("../models/Art.model");
 const Artist = require("../models/Artist.model");
 const User = require("../models/User.model");
-const { getArtLocations, addArtLocation } = require("../controllers/art-locations");
-
+const getArtLocations = require("../middleware/getArtLocations");
+const addArtLocation = require("../middleware/addArtLocation");
 
 const router = require("express").Router();
 
@@ -45,7 +45,7 @@ router.post("/create", (req, res, next) => {
         description: req.body.description,
         year: req.body.year,
         artist: req.body.artist,
-        location: req.body.location
+        address: req.body.address
     };
     Art.create(artDetails)
         .then(() => {
@@ -92,7 +92,7 @@ router.post("/:artId/edit", (req, res, next) => {
         description: req.body.description,
         year: req.body.year,
         artist: req.body.artist,
-        location: req.body.location
+        address: req.body.address
     };
 
     Art.findByIdAndUpdate(artId, artDetails)

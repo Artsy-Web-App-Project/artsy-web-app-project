@@ -1,15 +1,39 @@
 <section class="art-details">
     <h2>{{title}}</h2>
-    <img src="{{image}}"
+    <img src="{{this.image}}" class="art-img">
     <p>
         Artist: {{artist.name}} <br />
         Year: {{year}} <br />
-        Location: {{location}}
+        Location: {{location.formattedAddress}}
+
+        
     </p>
     <p>
         <strong>Description:</strong>
         {{description}}
     </p>
+
 </section>
 
 <a href="/arts">Back</a> 
+
+
+    <p>
+        Coordinates: {{location.coordinates}}
+    </p>
+    <div id="map" class="map"></div>
+
+    <script type="text/javascript">
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([{{location.coordinates}}]),
+          zoom: 19
+        })
+      });
+    </script>
