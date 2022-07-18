@@ -8,8 +8,8 @@ const artistSchema = new Schema(
             required: true
         },
         nationality: String,
-        birth: Date,
-        death: Date,
+        birth: Number,
+        death: Number,
         about: String
     },
     {
