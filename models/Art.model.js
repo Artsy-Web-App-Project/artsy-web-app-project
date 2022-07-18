@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const geocoder = require("../utils/geocoder")
 
 const artSchema = new Schema(
   {
@@ -17,7 +18,7 @@ const artSchema = new Schema(
     },
     address: {
       type: String,
-      required: [true, "Please add an address"],
+    //   required: [true, "Please add an address"],
     },
     location: {
       type: {
