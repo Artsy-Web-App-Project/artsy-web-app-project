@@ -5,18 +5,16 @@ const artSchema = new Schema(
     {
         image: {
             type: String,
-            required: true
         },
         title: {
             type: String,
             required: true
         },
         description: String,
-        year: String,
+        year: Number,
         artist: {
             type: Schema.Types.ObjectId,
-            ref: "Artist",
-            required: true
+            ref: "Artist"
         },
         location: {
             type: String,
