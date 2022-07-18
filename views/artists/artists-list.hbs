@@ -1,0 +1,13 @@
+<h1>Artists from our Gallery:</h1>
+
+{{#each artistsArr}}
+    <section class="artist-summary">
+        <h2>{{this.name}}</h2>
+        <p>
+            Nationality: {{this.nationality}} <br>
+            Birth: {{this.birth}} <br>
+            Death: {{this.death}} <br>
+            About: {{this.about}}
+        </p>
+    </section>
+{{/each}}
