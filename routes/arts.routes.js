@@ -55,13 +55,13 @@ router.post("/create", (req, res, next) => {
         });
 });
 
-router.get("/:artId", (req, res, next) => {
+router.get("/:artId", isLoggedIn, (req, res, next) => {
     const artId = req.params.artId;
 
     Art.findById(artId)
         .populate("artist")
         .then((artDetails) => {
-            res.render("arts/art-details", artDetails);
+            res.render("arts/art-details", {user: req.session.user, artDetails: artDetails});
         })
         .catch((error) => {
             console.log("Error getting art from DB", error);

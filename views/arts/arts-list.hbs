@@ -1,8 +1,57 @@
-<h1>Art pieces from our gallery</h1>
+<div class="container">
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Art Pieces From Our Art Gallery</h1><br>
+                    <p class="lead text-muted">“The aim of art is not to represent the outward appearance of things, but their inward significance.”</p>
+                    <p class="lead text-muted">Aristoteles</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="album py-2">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+                    {{#each data.artsArr}}
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark bg-gradient text-light shadow-lg">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                src="{{this.image}}" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+                            <div class="card-body">
+                                <h6 class="card-text">{{this.title}}</h6>
+                            </div>
+                            <div class="text-center mb-3">
+                                <a href="/arts/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {{#each data.artsArr}}
 <section class="art-summary">
-    <img src="{{this.image}}"
+    <img src="{{this.image}}">
     <h2>{{this.title}}</h2>
     <p> 
         Artist: {{this.artist.name}} <br />

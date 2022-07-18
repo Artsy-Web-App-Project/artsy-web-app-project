@@ -1,15 +1,26 @@
-<section class="art-details">
-    <h2>{{title}}</h2>
-    <img src="{{image}}"
-    <p>
-        Artist: {{artist.name}} <br />
-        Year: {{year}} <br />
-        Location: {{location}}
-    </p>
-    <p>
-        <strong>Description:</strong>
-        {{description}}
-    </p>
-</section>
-
-<a href="/arts">Back</a> 
+<div class="container">
+    <main class="mt-5 pt-4">
+        <div class="container dark-grey-text mt-5">
+            <div class="row wow fadeIn">
+                <div class="col-md-6 mb-4">
+                     <img src="{{artDetails.image}}" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-4">
+                        <div class="mb-3">
+                            <h2>{{artDetails.title}}</h2>
+                        </div>
+                        <div class="lead">
+                            <p><strong>Artist:</strong> {{artDetails.artist.name}}</p>
+                            <p><strong>Year:</strong> {{artDetails.year}}</p>
+                            <p><strong>Location:</strong> {{artDetails.location}}</p>
+                        </div>
+                        <p class="lead font-weight-bold"><strong>Description:</strong></p>
+                        <p>{{artDetails.description}}</p>
+                        <a class="link-success" href="/arts">Back to Arts</a>
+                    </div>                    
+                </div>                
+            </div>
+        </div>
+    </main>
+</div>
