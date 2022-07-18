@@ -1,0 +1,23 @@
+<h2>Edit the art: {{title}}</h2>
+
+<form action="/arts/{{_id}}/edit" method="POST">
+  <label> Title:
+    <input type="text" name="title" value="{{title}}" />
+  </label>
+
+  <label> Year:
+    <input type="number" name="year" min="1200" max="2030" value="{{year}}" />
+  </label>
+
+  <label> Location:
+    <input type="text" name="location" value="{{location}}" />
+  </label>
+
+  <label> Description:
+    <textarea name="description" cols="30" rows="4">
+        {{description}}
+    </textarea>
+  </label>
+
+  <button>Save changes</button>
+</form>
