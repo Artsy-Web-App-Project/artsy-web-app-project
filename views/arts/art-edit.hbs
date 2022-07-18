@@ -1,21 +1,27 @@
 <h2>Edit the art: {{title}}</h2>
 
+<img src="{{this.image}}" style="width: 400px">
+
 <form action="/arts/{{_id}}/edit" method="POST">
-  <label> Title:
+  <label>
+    Title:
     <input type="text" name="title" value="{{title}}" />
   </label>
 
-  <label> Year:
+  <label>
+    Year:
     <input type="number" name="year" min="1200" max="2030" value="{{year}}" />
   </label>
 
-  <label> Location:
+  <label>
+    Location:
     <input type="text" name="location" value="{{location}}" />
   </label>
 
-  <label> Description:
+  <label>
+    Description:
     <textarea name="description" cols="30" rows="4">
-        {{description}}
+      {{description}}
     </textarea>
   </label>
 

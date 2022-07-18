@@ -1,11 +1,18 @@
 <h2>Add an art</h2>
 
-<form action="/arts/create" method="POST">
-  <label> Title:
+<form action="/arts/create" method="POST" enctype="multipart/form-data">
+
+  <label>
+    Title:
     <input type="text" name="title" />
   </label>
 
-  <label> Artist:
+  <label>Image:
+    <input type="file" name="art-image" class="form-control-file" />
+  </label>
+
+  <label>
+    Artist:
     <select name="artist">
 
       {{#each data.artistsArr}}
@@ -14,15 +21,18 @@
     </select>
   </label>
 
-  <label> Year:
+  <label>
+    Year:
     <input type="number" name="year" min="1200" max="2030" value="year" />
   </label>
 
-  <label> Location:
+  <label>
+    Location:
     <input type="text" name="location" value="{{location}}" />
   </label>
 
-  <label> Description:
+  <label>
+    Description:
     <textarea name="description" cols="30" rows="4"> </textarea>
   </label>
 

@@ -2,6 +2,8 @@ const Art = require("../models/Art.model");
 const Artist = require("../models/Artist.model");
 const User = require("../models/User.model");
 
+const fileUploader = require('../config/cloudinary.config');
+
 const router = require("express").Router();
 
 const isLoggedIn = require("../middleware/isLoggedIn");
@@ -36,9 +38,9 @@ router.get("/create", isLoggedIn, (req, res, next) => {
     
 });
 
-router.post("/create", (req, res, next) => {
+router.post("/create", fileUploader.single('art-image'), (req, res, next) => {
     const artDetails = {
-        image: req.body.image,
+        image: req.file.path,
         title: req.body.title,
         description: req.body.description,
         year: req.body.year,
@@ -46,7 +48,8 @@ router.post("/create", (req, res, next) => {
         location: req.body.location
     };
     Art.create(artDetails)
-        .then(() => {
+        .then((newlyAddedArtFromDB) => {
+            console.log(newlyAddedArtFromDB);
             res.redirect("/arts");
         })
         .catch((error) => {
@@ -82,10 +85,9 @@ router.get("/:artId/edit", (req, res, next) => {
         })
 });
 
-router.post("/:artId/edit", (req, res, next) => {
+router.post("/:artId/edit", fileUploader.single('art-image'), (req, res, next) => {
     const {artId} = req.params;
     const artDetails = {
-        image: req.body.image,
         title: req.body.title,
         description: req.body.description,
         year: req.body.year,
