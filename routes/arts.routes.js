@@ -1,6 +1,8 @@
 const Art = require("../models/Art.model");
 const Artist = require("../models/Artist.model");
 const User = require("../models/User.model");
+const { getArtLocations, addArtLocation } = require("../controllers/art-locations");
+
 
 const router = require("express").Router();
 
