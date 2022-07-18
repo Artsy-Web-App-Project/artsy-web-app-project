@@ -3,7 +3,7 @@
         <div class="container dark-grey-text mt-5">
             <div class="row wow fadeIn">
                 <div class="col-md-6 mb-4">
-                     <img src="{{artDetails.image}}" class="img-fluid">
+                    <img src="{{artDetails.image}}" class="img-fluid">
                 </div>
                 <div class="col-md-6 mb-4">
                     <div class="p-4">
@@ -17,9 +17,16 @@
                         </div>
                         <p class="lead font-weight-bold"><strong>Description:</strong></p>
                         <p>{{artDetails.description}}</p>
+                        <div>
+                            <a href="/arts/{{artDetails._id}}/edit" class="text-right btn btn-outline-dark m-2" role="button">Edit</a>
+                            <form action="/arts/{{artDetails._id}}/delete" method="POST">
+                                <button class="text-left btn btn-outline-dark m-2" role="button">Delete</button>
+                            </form>
+                        </div>
+
                         <a class="link-success" href="/arts">Back to Arts</a>
-                    </div>                    
-                </div>                
+                    </div>
+                </div>
             </div>
         </div>
     </main>

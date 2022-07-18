@@ -27,7 +27,7 @@ router.get("/", isLoggedIn, (req, res, next) => {
 router.get("/create", isLoggedIn, (req, res, next) => {
     Artist.find()
     .then(artistsArr => {
-        res.render("arts/art-create", {user: req.session.user, data: artistsArr});
+        res.render("arts/art-create", {user: req.session.user, artistsArr: artistsArr});
     })
     .catch((error) => {
         console.log("Error getting artists from DB", error);

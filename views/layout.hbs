@@ -42,9 +42,10 @@
           </li>
         </ul>
 
-
-        <a href="/auth/login" class="btn btn-outline-light" role="button">Login</a>
-        <a href="/auth/signup" class="btn btn-outline-light" role="button">Register</a>
+        {{#unless user}}
+        <a href="/auth/login" class="btn btn-outline-light mx-1" role="button">Login</a>
+        <a href="/auth/signup" class="btn btn-outline-light mx-1" role="button">Register</a>
+        {{/unless}}
 
         {{#if user}}
         <form class="m-0" id="logout-form" action="/auth/logout" method="POST">

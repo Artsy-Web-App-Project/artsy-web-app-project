@@ -8,18 +8,18 @@
   <label> Artist:
     <select name="artist">
 
-      {{#each data.artistsArr}}
+      {{#each artistsArr}}
         <option value="{{this._id}}">{{this.name}}</option>
       {{/each}}
     </select>
   </label>
 
   <label> Year:
-    <input type="number" name="year" min="1200" max="2030" value="year" />
+    <input type="number" name="year" min="1200" max="2030"  />
   </label>
 
   <label> Location:
-    <input type="text" name="location" value="{{location}}" />
+    <input type="text" name="location" />
   </label>
 
   <label> Description:
