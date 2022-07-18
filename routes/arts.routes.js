@@ -1,22 +1,22 @@
 const Art = require("../models/Art.model");
 const Artist = require("../models/Artist.model");
-//const User = require("../models/User.model");
+const User = require("../models/User.model");
 
 const router = require("express").Router();
 
-const checkIfLoggedIn = require("../middleware/isLoggedIn");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 
 
 
-router.get("/", (req, res, next) => {
+router.get("/", isLoggedIn, (req, res, next) => {
     Art.find()
         .populate("artist")
         .then((artsFromDB) => {
             const data = {
                 artsArr: artsFromDB,
             };
-            res.render("arts/arts-list", data)
+            res.render("arts/arts-list", {user: req.session.user, data: data})
         })
         .catch((error) => {
             console.log("Error getting arts from DB", error);
@@ -24,10 +24,10 @@ router.get("/", (req, res, next) => {
         });
 });
 
-router.get("/create", (req, res, next) => {
+router.get("/create", isLoggedIn, (req, res, next) => {
     Artist.find()
     .then(artistsArr => {
-        res.render("arts/art-create", {artistsArr});
+        res.render("arts/art-create", {user: req.session.user, data: artistsArr});
     })
     .catch((error) => {
         console.log("Error getting artists from DB", error);
@@ -84,9 +84,16 @@ router.get("/:artId/edit", (req, res, next) => {
 
 router.post("/:artId/edit", (req, res, next) => {
     const {artId} = req.params;
-    const {image, title, description, year, artist, location} = req.params;
+    const artDetails = {
+        image: req.body.image,
+        title: req.body.title,
+        description: req.body.description,
+        year: req.body.year,
+        artist: req.body.artist,
+        location: req.body.location
+    };
 
-    Art.findByIdAndUpdate(artId, {image, title, description, year, artist, location})
+    Art.findByIdAndUpdate(artId, artDetails)
         .then (() => {
             res.redirect(`/arts/${artId}`);
         })
@@ -96,7 +103,7 @@ router.post("/:artId/edit", (req, res, next) => {
         })
 });
 
-router.get("/:artId/delete", (req, res, next) => {
+router.post("/:artId/delete", (req, res, next) => {
     const {artId} = req.params;
 
     Art.findByIdAndRemove(artId)
