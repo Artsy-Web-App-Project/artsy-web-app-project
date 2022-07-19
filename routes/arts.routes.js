@@ -75,9 +75,14 @@ router.get("/:artId", isLoggedIn, (req, res, next) => {
 router.get("/:artId/edit", (req, res, next) => {
     const {artId} = req.params;
 
-    Art.findById(artId)
-        .then((artDetails) => {
-            res.render("arts/art-edit", artDetails);
+    Promise.all([Art.findById(artId), Artist.find()])
+
+        .then(([artDetails, artistsArr]) => {
+            const data = {
+                artistsArr: artistsArr,
+                artDetails: artDetails
+            };
+            res.render("arts/art-edit", data);
         })
         .catch((error) => {
             console.log("Error getting art details from DB", error);

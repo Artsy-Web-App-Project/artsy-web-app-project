@@ -1,23 +1,81 @@
-<h2>Edit the art: {{title}}</h2>
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('/images/artsy-background5.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+        "></div>
+  <!-- Background image -->
 
-<form action="/arts/{{_id}}/edit" method="POST">
-  <label> Title:
-    <input type="text" name="title" value="{{title}}" />
-  </label>
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-2 px-md-5">
 
-  <label> Year:
-    <input type="number" name="year" min="1200" max="2030" value="{{year}}" />
-  </label>
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Edit "{{artDetails.title}}"</h2>
+         <form action="/arts/{{artDetails._id}}/edit" method="POST">
+            <!-- 2 column grid -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                   <input type="text" name="title" value="{{artDetails.title}}" class="form-control" />
+                  <label class="form-label" for="form3Example1">Title of the art piece</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <select class="form-control" name="artist">
+                  {{#each artistsArr}}
+                      <option value="{{this._id}}"> {{this.name}} </option>
+                  {{/each}}
+                  </select>
+                  <label class="form-label" for="form3Example2">Artist name</label>
+                </div>
+              </div>
+            </div>
 
-  <label> Location:
-    <input type="text" name="location" value="{{location}}" />
-  </label>
+             <!-- 4 column grid -->
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="number" name="year" min="1200" max="2030" value="{{artDetails.year}}" class="form-control" />
+                  <label class="form-label" for="form3Example1">Year of the art</label>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="text" name="location" value="{{artDetails.location}}" class="form-control"/>
+                  <label class="form-label" for="form3Example2">Current country of the art</label>
+                </div>
+              </div>
 
-  <label> Description:
-    <textarea name="description" cols="30" rows="4">
-        {{description}}
-    </textarea>
-  </label>
+              
+            </div>
 
-  <button>Save changes</button>
-</form>
+            <!-- -->
+            <div class="form-outline mb-4">
+              <input type="file" name="art-image" class="form-control-file form-control" />
+              <label class="form-label" for="form3Example3">Image of the art piece</label>
+            </div>
+
+            <!-- -->
+            <div class="form-outline mb-4">
+              <textarea name="description" cols="30" rows="4" class="form-control">{{artDetails.description}}</textarea>
+              <label class="form-label" for="form3Example4">Description of the art piece</label>
+            </div>
+
+            <!--button -->
+            <button type="submit" class="btn btn-dark-moon btn-outline-light btn-rounded text-white px-4 btn-block mb-4">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
