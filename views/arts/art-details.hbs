@@ -1,33 +1,63 @@
 <div class="container">
-    <main class="mt-5 pt-4">
-        <div class="container dark-grey-text mt-5 px-4 bg-light bg-opacity-50">
-            <div class="row wow fadeIn">
-                <div class="col-md-6 mb-4">
-                    <img src="{{artDetails.image}}" class="img-fluid">
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="p-4">
-                        <div class="mb-3">
-                            <h2>{{artDetails.title}}</h2>
-                        </div>
-                        <div class="lead">
-                            <p><strong>Artist:</strong> {{artDetails.artist.name}}</p>
-                            <p><strong>Year:</strong> {{artDetails.year}}</p>
-                            <p><strong>Location:</strong> {{artDetails.location}}</p>
-                        </div>
-                        <p class="lead font-weight-bold"><strong>Description:</strong></p>
-                        <p>{{artDetails.description}}</p>
-                        <div>
-                            <a href="/arts/{{artDetails._id}}/edit" class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-25 px-4" role="button">Edit</a>
-                            <form action="/arts/{{artDetails._id}}/delete" method="POST" style="display:inline-block">
-                                <button class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-2 mx-3 px-3" role="button">Delete</button>
-                            </form>
-                        </div>
-
-                        <a class="link-success" href="/arts">Back to Arts</a>
-                    </div>
-                </div>
-            </div>
+  <main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5 px-4 bg-light bg-opacity-50">
+      <div class="row wow fadeIn">
+        <div class="col-md-6 mb-4">
+          <img src="{{artDetails.image}}" class="img-fluid" />
         </div>
-    </main>
+        <div class="col-md-6 mb-4">
+          <div class="p-4">
+            <div class="mb-3">
+              <h2>{{artDetails.title}}</h2>
+            </div>
+            <div class="lead">
+              <p><strong>Artist:</strong> {{artDetails.artist.name}}</p>
+              <p><strong>Year:</strong> {{artDetails.year}}</p>
+              <p><strong>Location:</strong>
+                {{artDetails.location.formattedAddress}}</p>
+            </div>
+            <p class="lead font-weight-bold"><strong>Description:</strong></p>
+            <p>{{artDetails.description}}</p>
+            <div>
+              <a
+                href="/arts/{{artDetails._id}}/edit"
+                class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-25 px-4"
+                role="button"
+              >Edit</a>
+              <form
+                action="/arts/{{artDetails._id}}/delete"
+                method="POST"
+                style="display:inline-block"
+              >
+                <button
+                  class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-2 mx-3 px-3"
+                  role="button"
+                >Delete</button>
+              </form>
+            </div>
+
+            <a class="link-success" href="/arts">Back to Arts</a>
+          </div>
+        </div>
+        <div id="map" class="map"></div>
+        <div id="popup" class="ol-popup">
+          <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+          <div id="popup-content"></div>
+        </div>
+
+        <script type="text/javascript">
+          let map = new ol.Map({ target: 'map', layers: [ new ol.layer.Tile({
+          source: new ol.source.OSM() }) ], view: new ol.View({ center:
+          ol.proj.fromLonLat([{{artDetails.location.coordinates}}]), zoom: 17 })
+          }); 
+          let layer = new ol.layer.Vector({ source: new ol.source.Vector({
+          features: [ new ol.Feature({ geometry: new
+          ol.geom.Point(ol.proj.fromLonLat([{{artDetails.location.coordinates}}]))
+          }) ] }) }); 
+          map.addLayer(layer);
+          
+        </script>
+      </div>
+    </div>
+  </main>
 </div>
