@@ -16,7 +16,7 @@ router.get("/", isLoggedIn, (req, res, next) => {
             const data = {
                 artsArr: artsFromDB,
             };
-            res.render("arts/arts-list", {user: req.session.user, data: data})
+            res.render("arts/arts-list", { user: req.session.user, data: data })
         })
         .catch((error) => {
             console.log("Error getting arts from DB", error);
@@ -26,14 +26,14 @@ router.get("/", isLoggedIn, (req, res, next) => {
 
 router.get("/create", isLoggedIn, (req, res, next) => {
     Artist.find()
-    .then(artistsArr => {
-        res.render("arts/art-create", {user: req.session.user, artistsArr: artistsArr});
-    })
-    .catch((error) => {
-        console.log("Error getting artists from DB", error);
-        next(error);
-    })
-    
+        .then(artistsArr => {
+            res.render("arts/art-create", { user: req.session.user, artistsArr: artistsArr });
+        })
+        .catch((error) => {
+            console.log("Error getting artists from DB", error);
+            next(error);
+        })
+
 });
 
 router.post("/create", (req, res, next) => {
@@ -61,7 +61,7 @@ router.get("/:artId", isLoggedIn, (req, res, next) => {
     Art.findById(artId)
         .populate("artist")
         .then((artDetails) => {
-            res.render("arts/art-details", {user: req.session.user, artDetails: artDetails});
+            res.render("arts/art-details", { user: req.session.user, artDetails: artDetails });
         })
         .catch((error) => {
             console.log("Error getting art from DB", error);
@@ -70,12 +70,19 @@ router.get("/:artId", isLoggedIn, (req, res, next) => {
 });
 
 router.get("/:artId/edit", (req, res, next) => {
-    const {artId} = req.params;
+    const { artId } = req.params;
 
-    Art.findById(artId)
-        .then((artDetails) => {
-            res.render("arts/art-edit", artDetails);
+    Promise.all([Art.findById(artId), Artist.find()])
+
+        .then(([artDetails, artistsArr]) => {
+            const data = {
+                artistsArr: artistsArr,
+                artDetails: artDetails
+            };
+            res.render("arts/art-edit", data);
         })
+
+
         .catch((error) => {
             console.log("Error getting art details from DB", error);
             next(error);
@@ -83,7 +90,7 @@ router.get("/:artId/edit", (req, res, next) => {
 });
 
 router.post("/:artId/edit", (req, res, next) => {
-    const {artId} = req.params;
+    const { artId } = req.params;
     const artDetails = {
         image: req.body.image,
         title: req.body.title,
@@ -94,7 +101,7 @@ router.post("/:artId/edit", (req, res, next) => {
     };
 
     Art.findByIdAndUpdate(artId, artDetails)
-        .then (() => {
+        .then(() => {
             res.redirect(`/arts/${artId}`);
         })
         .catch((error) => {
@@ -104,7 +111,7 @@ router.post("/:artId/edit", (req, res, next) => {
 });
 
 router.post("/:artId/delete", (req, res, next) => {
-    const {artId} = req.params;
+    const { artId } = req.params;
 
     Art.findByIdAndRemove(artId)
         .then(() => {
