@@ -37,13 +37,14 @@ router.get("/create", isLoggedIn, (req, res, next) => {
 });
 
 router.post("/create", (req, res, next) => {
+    let totalAddress = `${req.body.address} ${req.body.postalcity} ${req.body.country}`;
     const artDetails = {
         image: req.body.image,
         title: req.body.title,
         description: req.body.description,
         year: req.body.year,
         artist: req.body.artist,
-        location: req.body.location
+        address: totalAddress
     };
     Art.create(artDetails)
         .then(() => {
@@ -83,6 +84,7 @@ router.get("/:artId/edit", (req, res, next) => {
 });
 
 router.post("/:artId/edit", (req, res, next) => {
+
     const {artId} = req.params;
     const artDetails = {
         image: req.body.image,
