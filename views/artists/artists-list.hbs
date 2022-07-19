@@ -1,13 +1,37 @@
-<h1>Artists from our Gallery:</h1>
+<div class="container">
+    <main>
+        <section class="pt-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Artists From Our Art Gallery</h1><br>
+                    <p class="lead text-muted">“The artist sees what others only catch a glimpse of.”</p>
+                    <p class="lead text-muted">Leonardo da Vinci</p>
+                </div>
+            </div>
+        </section>
 
-{{#each artistsArr}}
-    <section class="artist-summary">
-        <h2>{{this.name}}</h2>
-        <p>
-            Nationality: {{this.nationality}} <br>
-            Birth: {{this.birth}} <br>
-            Death: {{this.death}} <br>
-            About: {{this.about}}
-        </p>
-    </section>
-{{/each}}
+        <div class="album pb-2 px-4 bg-light bg-opacity-50">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+                    {{#each artistsArr}}
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark bg-gradient text-light shadow-lg">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                src="starter-code/img/project-1.jpg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+                            <div class="card-body">
+                                <h6 class="card-text">{{this.name}}</h6>
+                            </div>
+                            <div class="text-center mb-3">
+                                <a href="/artists/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

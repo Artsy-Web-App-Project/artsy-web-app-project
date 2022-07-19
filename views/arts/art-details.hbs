@@ -1,15 +1,33 @@
-<section class="art-details">
-    <h2>{{title}}</h2>
-    <img src="{{image}}"
-    <p>
-        Artist: {{artist.name}} <br />
-        Year: {{year}} <br />
-        Location: {{location}}
-    </p>
-    <p>
-        <strong>Description:</strong>
-        {{description}}
-    </p>
-</section>
+<div class="container">
+    <main class="mt-5 pt-4">
+        <div class="container dark-grey-text mt-5 px-4 bg-light bg-opacity-50">
+            <div class="row wow fadeIn">
+                <div class="col-md-6 mb-4">
+                    <img src="{{artDetails.image}}" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-4">
+                        <div class="mb-3">
+                            <h2>{{artDetails.title}}</h2>
+                        </div>
+                        <div class="lead">
+                            <p><strong>Artist:</strong> {{artDetails.artist.name}}</p>
+                            <p><strong>Year:</strong> {{artDetails.year}}</p>
+                            <p><strong>Location:</strong> {{artDetails.location}}</p>
+                        </div>
+                        <p class="lead font-weight-bold"><strong>Description:</strong></p>
+                        <p>{{artDetails.description}}</p>
+                        <div>
+                            <a href="/arts/{{artDetails._id}}/edit" class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-25 px-4" role="button">Edit</a>
+                            <form action="/arts/{{artDetails._id}}/delete" method="POST" style="display:inline-block">
+                                <button class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-2 mx-3 px-3" role="button">Delete</button>
+                            </form>
+                        </div>
 
-<a href="/arts">Back</a> 
+                        <a class="link-success" href="/arts">Back to Arts</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

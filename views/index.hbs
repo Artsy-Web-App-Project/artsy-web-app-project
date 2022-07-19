@@ -1,2 +1,108 @@
-<h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<div class="container">
+
+    <header class="row mt-3">
+
+        <div class="col">
+            <img src="/images/artsy-header7.png" class="shadow-lg img-fluid mx-auto d-block" alt="artsy header">
+        </div>
+    </header>
+
+    <div class="container px-3 shadow-lg bg-dark bg-gradient" id="featured-3">
+        <div class="row g-6 row-cols-1 row-cols-lg-3">
+            <div class="feature col text-center bg-dark bg-gradient text-white-50 p-3">
+                <div
+                    class="feature-icon rounded d-inline-flex align-items-center justify-content-center bg-primary bg-light text-white fs-2 mb-2">
+                    <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
+                </div>
+                <h4>Master Pieces</h4>
+                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
+                    cursus sed euismod nec,
+                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
+                    sapien, id fringilla.</h6>
+            </div>
+            <div class="feature col text-center bg-dark bg-gradient text-white-50 p-3">
+                <div
+                    class="feature-icon rounded d-inline-flex align-items-center justify-content-center bg-primary bg-light text-white fs-2 mb-2">
+                    <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
+                </div>
+                <h4>Masters</h4>
+                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
+                    cursus sed euismod nec,
+                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
+                    sapien, id fringilla.</h6>
+            </div>
+            <div class="feature col text-center bg-dark bg-gradient text-white-50 p-3">
+                <div
+                    class="feature-icon rounded d-inline-flex align-items-center justify-content-center bg-primary bg-light text-white fs-2 mb-2">
+                    <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
+                </div>
+                <h4>And New Talents</h4>
+                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
+                    cursus sed euismod nec,
+                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
+                    sapien, id fringilla.</h6>
+            </div>
+        </div>
+    </div>
+
+    
+    <div>
+        <div class="album py-5 px-4 bg-light bg-opacity-50">
+            <h3>ART PIECES</h3>
+            <p class="text-secondary">A FEW ART PIECES FROM OUR ART GALLERY</p>
+            <hr>
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+                    {{#each data.artsArr}}
+                    <div class="col">
+                        <div class="card h-100 border-0 bg-dark bg-gradient text-light shadow-lg">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                src="starter-code/img/project-1.jpg" role="img" aria-label="Placeholder: Thumbnail"
+                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+                            <div class="card-body">
+                                <h6 class="card-text">{{this.title}}</h6>
+                            </div>
+                            <div class="text-center mb-3">
+                                <a href="/arts/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
+                            </div>
+                       </div>
+                    </div>
+                    {{/each}}
+                </div>
+            <div>
+        </div>
+    </div>
+    <div>
+       <div class="album pt-3 mx-5"></div>
+            <h3>ARTISTS</h3>
+            <p class="text-secondary">SOME ARTISTS FROM OUR ART GALLERY </p>
+            <hr>
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+                    {{#each data.artistsArr}}
+                    <div class="col">
+                        <div class="card h-100 border-0  bg-dark bg-gradient text-light shadow-lg">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                src="starter-code/img/slider-1.jpg" role="img"
+                                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
+                            <rect width="100%" height="100%" fill="#55595c"></rect></img>
+
+                            <div class="card-body">
+                                <h6 class="card-text">{{this.name}}</h6>
+                            </div>
+                            <div class="text-center mb-3">
+                                <a href="/artists/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
