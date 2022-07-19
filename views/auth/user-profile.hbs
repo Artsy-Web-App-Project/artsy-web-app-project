@@ -1,8 +1,34 @@
-<h1>Profile page</h1>
-
-{{#if user}}
-  <h2>Welcome, {{ user.username }}!</h2>
-  <p>This is your profile page my friend!</p>
-{{else}}
-  <p>Still no logged in user, sorry!</p>
-{{/if}}
+<div class="container">
+    <main class="mt-5 pt-4">
+        <div class="container dark-grey-text mt-5 px-4 bg-light bg-opacity-50">
+            <div class="row wow fadeIn">
+                <div class="col-md-6 mb-4">
+                    <img src="/images/user-icon.png" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="p-4">
+                        <div class="mb-3">
+                            <p class="text font-italic">“There is nothing more truely artistic than to love people.”</p>
+                            <p class="text font-italic">Vincent van Gogh</p>
+                            <h2 class="pt-3">Your Account</h2>
+                          
+                        </div>
+                        {{#if user}}
+                        <div class="lead">
+                            <h3>Welcome Art Lover, {{ user.username }}!</h3>
+                            <p class="pt-4">This is your Art'sy account. Let's discover the world of Art!</p>
+                        {{else}}
+                            <p>Still no logged in user, sorry! Just enter your email and your password, discover the world of art.</p>
+                        {{/if}}
+                        </div>
+                    
+                        <div class="my-5">
+                            <a href="/arts" class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-2 px-4" role="button">Arts</a>
+                            <a href="/artists" class="btn btn-dark-moon btn-outline-light btn-rounded text-white my-2 mx-3 px-3" role="button">Artists</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

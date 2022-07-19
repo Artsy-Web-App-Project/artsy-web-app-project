@@ -1,30 +1,115 @@
-<h2>Add an art</h2>
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('/images/artsy-background1.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px;
+        "></div>
+  <!-- Background image -->
 
-<form action="/arts/create" method="POST">
-  <label> Title:
-    <input type="text" name="title" />
-  </label>
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-2 px-md-5">
 
-  <label> Artist:
-    <select name="artist">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Add an art piece</h2>
+          <form action="/arts/create" method="POST" enctype="multipart/form-data">
+            <!-- 2 column grid -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" name="title" class="form-control" />
+                  <label class="form-label" for="form3Example1">Title of the art piece</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <select class="form-control" name="artist">
+                    {{#each artistsArr}}
+                      <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                  </select>
+                  <label class="form-label" for="form3Example2">Artist name</label>
+                </div>
+              </div>
+            </div>
 
-      {{#each artistsArr}}
-        <option value="{{this._id}}">{{this.name}}</option>
-      {{/each}}
-    </select>
-  </label>
+             <!-- 4 column grid -->
+            <div class="row">
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="number" name="year" min="1300" max="2025" class="form-control" />
+                  <label class="form-label" for="form3Example1">Year of the art</label>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="text" name="country" class="form-control"/>
+                  <label class="form-label" for="form3Example2">Current country of the art</label>
+                </div>
+              </div>
 
-  <label> Year:
-    <input type="number" name="year" min="1200" max="2030"  />
-  </label>
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="text" name="city" class="form-control" />
+                  <label class="form-label" for="form3Example1">Current city of the art</label>
+                </div>
+              </div>
+              <div class="col-md-3 mb-4">
+                <div class="form-outline">
+                  <input type="text" name="poscode" class="form-control"/>
+                  <label class="form-label" for="form3Example2">Postcode of the location</label>
+                </div>
+              </div>
+            </div>
 
-  <label> Location:
-    <input type="text" name="location" />
-  </label>
+            <!-- -->
+            <div class="form-outline mb-4">
+              <input type="file" name="art-image" class="form-control-file form-control" />
+              <label class="form-label" for="form3Example3">Image of the art piece</label>
+            </div>
 
-  <label> Description:
-    <textarea name="description" cols="30" rows="4"> </textarea>
-  </label>
+            <!-- -->
+            <div class="form-outline mb-4">
+              <textarea name="description" cols="30" rows="4" class="form-control"> </textarea>
+              <label class="form-label" for="form3Example4">Description of the art piece</label>
+            </div>
 
-  <button type="submit"> Create </button>
-</form>
+            <!--button -->
+            <button type="submit" class="btn btn-dark-moon btn-outline-light btn-rounded text-white px-4 btn-block mb-4">Add the art piece</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
