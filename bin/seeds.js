@@ -11,66 +11,9 @@ const arts = [
         title: "The Night Watch",
         description: "It is a group portrait of a militia company. These were groups of able-bodied men who, if the need arose, could be called upon to defend the city or put down riots. The painting depicts the company of Captain Frans Banning Cocq and his lieutenant, Willem van Ruytenburgh, surrounded by sixteen of their men.",
         year: 1642,
-        location: "Amsterdam",
+        address: "Fokke Simmonzstraat 50A, 1017TJ, Amsterdam, Netherlands",
         artist: "Rembrandt Harmenszoon van Rijn"
-    },
-    {
-        image: "",
-        title: "The Starry Night",
-        description: "The Starry Night, oil on canvas by Vincent van Gogh, 1889; in the Museum of Modern Art, New York City. History Archive/REX/Shutterstock.com. The oil-on-canvas painting is dominated by a night sky roiling with chromatic blue swirls, a glowing yellow crescent moon, and stars rendered as radiating orbs.",
-        year: 1889,
-        location: "Amsterdam",
-        artist: "Vincent Willem van Gogh"
-    },
-    {
-        image: "",
-        title: "The Bedroom",
-        description: "Van Gogh's Bedroom, or Bedroom in Arles, painting is of a room where one sleeps, and he wanted the painting to put the viewer's mind and imagination at rest. Upon entering the room, there is a bed to the right. Along the wall to the right is a chair, table with water on it, and a window overlooking the street.",
-        year: 1888,
-        location: "Amsterdam",
-        artist: "Vincent Willem van Gogh"
-    },
-    {
-        image: "",
-        title: "The Birth of Venus",
-        description: "Known as the “Birth of Venus”, the composition actually shows the goddess of love and beauty arriving on land, on the island of Cyprus, born of the sea spray and blown there by the winds, Zephyr and, perhaps, Aura. The goddess is standing on a giant scallop shell, as pure and as perfect as a pearl.",
-        year: 1486,
-        location: "Florence",
-        artist: "Sandro Botticelli"
-    },
-    {
-        image: "",
-        title: "Calumny of Apelles",
-        description: "The Calumny of Apelles is a panel painting in tempera by the Italian Renaissance painter Sandro Botticelli. Based on the description of an lost ancient painting by Apelles.",
-        year: 1495,
-        location: "Florence",
-        artist: "Sandro Botticelli"
-    },
-    {
-        image: "",
-        title: "The Women of Algiers",
-        description: "Les Femmes d'Alger (English: Women of Algiers) is a series of 15 paintings and numerous drawings by the Spanish artist Pablo Picasso. The series, created in 1954–1955, was inspired by Eugène Delacroix's 1834 painting The Women of Algiers in their Apartment",
-        year: 1955,
-        location: "Paris",
-        artist: "Pablo Ruiz Picasso"
-    },
-    {
-        image: "",
-        title: "San Giorgio Maggiore at Dusk",
-        description: "San Giorgio Maggiore al Crepuscolo is approximately two-by-three feet and painted in oil on canvas. It depicts mysterious buildings that seem to magically appear from the surrounding landscape, they almost seem to float in the background. The forms are gently inserted, though not enough to disguise their identity.",
-        year: 1912,
-        location: "Cardiff",
-        artist: "Oscar-Claude Monet"
-    },
-    {
-        image: "",
-        title: "Cestello Annunciation",
-        description: "The Cestello Annunciation, is a painting in tempera on panel made in 1489 by Sandro Botticelli. It was painted for the patron Benedetto di Ser Giovanni Guardi to adorn the church of the Florentine monastery of Cestello, which is now known as Santa Maria Maddalena de'Pazzi. The Annunciation. Artist. Sandro Botticelli.",
-        year: 1489,
-        location: "Florence",
-        artist: "Sandro Botticelli"
     }
-
 ];
 
 const artists = [
@@ -123,10 +66,14 @@ mongoose
 
         const promises = arts.map(art => {
             return Artist.findOne({ name: art.artist }).then((artist) => {
+                console.log(artist)
                 art.artist = artist._id
                 return art
             })
-                .then((artUpdated) => Art.create(artUpdated))
+                .then((artUpdated) => {
+                
+                    return Art.create(artUpdated);
+                });
         });
         return Promise.all(promises);
     })
