@@ -106,7 +106,7 @@ const artists = [
     death: 1890,
     about:
       "Vincent Willem van Gogh was a Dutch Post-Impressionist painter who posthumously became one of the most famous and influential figures in Western art history. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326033/atrsy-web-app-project/dkwhpqxbbscloxt6g35s.jpg" 
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340283/atrsy-web-app-project/ooreqowplfcjeay4oxnt.jpg" 
   },
   {
     name: "Rembrandt Harmenszoon van Rijn",
@@ -115,7 +115,7 @@ const artists = [
     death: 1669,
     about:
       "Rembrandt Harmenszoon van Rijn, usually simply known as Rembrandt, was a Dutch Golden Age painter, printmaker and draughtsman. An innovative and prolific master in three media, he is generally considered one of the greatest visual artists in the history of art and the most important in Dutch art history.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326116/atrsy-web-app-project/z5yjoulgi3ijtczeqb85.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340242/atrsy-web-app-project/p0acar5tyqerwb0khkmg.jpg"
   },
   {
     name: "Sandro Botticelli",
@@ -124,7 +124,7 @@ const artists = [
     death: 1510,
     about:
       "At the height of his fame, the Florentine painter and draughtsman Sandro Botticelli was one of the most esteemed artists in Italy. His graceful pictures of the Madonna and Child, his altarpieces and his life-size mythological paintings, such as 'Venus and Mars', were immensely popular in his lifetime.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326204/atrsy-web-app-project/oqk1ucx898uxqqpbrbnb.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340204/atrsy-web-app-project/kpxj9yutushxhd3qzxd9.jpg"
   },
   {
     name: "Pablo Ruiz Picasso",
@@ -133,7 +133,7 @@ const artists = [
     death: 1973,
     about:
       "Pablo Picasso was a Spanish painter, sculptor, printmaker, ceramicist and stage designer considered one of the greatest and most influential artists of the 20th century. Picasso is credited, along with Georges Braque, with the creation of Cubism.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326281/atrsy-web-app-project/z9dvxbgngnap93f3xgzi.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340169/atrsy-web-app-project/bsnks1gckikx3y550llm.jpg"
   },
   {
     name: "Oscar-Claude Monet",
@@ -142,7 +142,7 @@ const artists = [
     death: 1926,
     about:
       "French painter who was the initiator, leader, and unswerving advocate of the Impressionist style.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326357/atrsy-web-app-project/gyqtuve3esdsohyefbjw.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340123/atrsy-web-app-project/nrowacssraqohvcerca5.jpg"
   },
 
   {
@@ -152,7 +152,7 @@ const artists = [
     death: 1954,
     about:
       "Frida Kahlo was a Mexican painter best known for her uncompromising and brilliantly colored self-portraits that deal with such themes as identity, the human body, and death. Although she denied the connection, she is often identified as a Surrealist.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326446/atrsy-web-app-project/bnmsrabruywgclaqpkg2.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658340034/atrsy-web-app-project/dvamsifvkbdhi3xhnagq.jpg"
   },
   {
     name: "Leonardo da Vinci",
@@ -161,7 +161,7 @@ const artists = [
     death: 1519,
     about:
       "Leonardo da Vinci was a Renaissance painter, sculptor, architect, inventor, military engineer and draftsman — the epitome of a true Renaissance man. Gifted with a curious mind and a brilliant intellect, da Vinci studied the laws of science and nature, which greatly informed his work.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326650/atrsy-web-app-project/c4pd7pzsggdow6be9z3i.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658339994/atrsy-web-app-project/xhgjsmvq5wbucyctdbd9.jpg"
   },
   {
     name: "Salvador Domingo Felipe Jacinto Dali",
@@ -170,7 +170,7 @@ const artists = [
     death: 1989,
     about:
       "Salvador Dalí was a Spanish Surrealist painter and printmaker known for exploring subconscious imagery. Arguably, his most famous painting is The Persistence of Memory (1931), depicting limp melting watches.",
-    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658326744/atrsy-web-app-project/fz28rssoauj6zohsxi75.jpg"
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658341691/atrsy-web-app-project/oe6eeqdnylnxe9q2yjrj.jpg"
   },
 ];
 
@@ -188,7 +188,6 @@ mongoose
     const promises = arts.map((art) => {
       return Artist.findOne({ name: art.artist })
         .then((artist) => {
-          console.log(artist);
           art.artist = artist._id;
           return art;
         })

@@ -15,10 +15,10 @@
                     <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
                 </div>
                 <h4>Master Pieces</h4>
-                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
-                    cursus sed euismod nec,
-                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
-                    sapien, id fringilla.</h6>
+                <h6 class="text-white-50">In our gallery, we ensure that world-famous master pieces reach art lovers.
+                    You can also find information about the locations where these great works of art are exhibited on
+                    the website of our gallery.
+                </h6>
             </div>
             <div class="feature col text-center bg-dark bg-gradient text-white-50 p-3">
                 <div
@@ -26,10 +26,9 @@
                     <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
                 </div>
                 <h4>Masters</h4>
-                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
-                    cursus sed euismod nec,
-                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
-                    sapien, id fringilla.</h6>
+                <h6 class="text-white-50">We are honored to feature world-famous painters and their master pieces. The
+                    gallery features original works by traditional and contemporary artists in a range of mediums
+                    including painting and sculpture.</h6>
             </div>
             <div class="feature col text-center bg-dark bg-gradient text-white-50 p-3">
                 <div
@@ -37,15 +36,14 @@
                     <img class="rounded" style="max-height: 1em;" src="images/artsy-logo3.svg">
                 </div>
                 <h4>And New Talents</h4>
-                <h6 class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ligula sem,
-                    cursus sed euismod nec,
-                    imperdiet malesuada augue. Curabitur bibendum, risus vel pretium porttitor, odio metus finibus
-                    sapien, id fringilla.</h6>
+                <h6 class="text-white-50">In addition, emerging artists and new talents exhibit their works in our. We
+                    are trying to shed light on the masters of the future.
+                    gallery.</h6>
             </div>
         </div>
     </div>
 
-    
+
     <div>
         <div class="album py-5 px-4 bg-light bg-opacity-50">
             <h3>ART PIECES</h3>
@@ -56,9 +54,9 @@
                     {{#each data.artsArr}}
                     <div class="col">
                         <div class="card h-100 border-0 bg-dark bg-gradient text-light shadow-lg">
-                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
-                                src="{{this.image}}" role="img" aria-label="Placeholder: Thumbnail"
-                                preserveAspectRatio="xMidYMid slice" focusable="false">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="{{this.image}}"
+                                role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                focusable="false">
                             <rect width="100%" height="100%" fill="#55595c"></rect></img>
 
                             <div class="card-body">
@@ -67,42 +65,41 @@
                             <div class="text-center mb-3">
                                 <a href="/arts/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
                             </div>
-                       </div>
+                        </div>
                     </div>
                     {{/each}}
                 </div>
+                <div>
+                </div>
+            </div>
             <div>
-        </div>
-    </div>
-    <div>
-       <div class="album pt-3 mx-5"></div>
-            <h3>ARTISTS</h3>
-            <p class="text-secondary">SOME ARTISTS FROM OUR ART GALLERY </p>
-            <hr>
-            <div class="container-fluid">
-                <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
-                    {{#each data.artistsArr}}
-                    <div class="col">
-                        <div class="card h-100 border-0  bg-dark bg-gradient text-light shadow-lg">
-                            <img class="bd-placeholder-img card-img-top" width="100%" height="180"
-                                src="starter-code/img/slider-1.jpg" role="img"
-                                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
-                                focusable="false">
-                            <rect width="100%" height="100%" fill="#55595c"></rect></img>
+                <div class="album pt-3 mx-5"></div>
+                <h3>ARTISTS</h3>
+                <p class="text-secondary">SOME ARTISTS FROM OUR ART GALLERY </p>
+                <hr>
+                <div class="container-fluid">
+                    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 g-4 mb-5">
+                        {{#each data.artistsArr}}
+                        <div class="col">
+                            <div class="card h-100 border-0  bg-dark bg-gradient text-light shadow-lg">
+                                <img class="bd-placeholder-img card-img-top img-fluid" width="100%" height="180"
+                                    src="{{this.image}}" role="img" aria-label="Placeholder: Thumbnail"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                <rect width="100%" height="100%" fill="#55595c"></rect></img>
 
-                            <div class="card-body">
-                                <h6 class="card-text">{{this.name}}</h6>
-                            </div>
-                            <div class="text-center mb-3">
-                                <a href="/artists/{{this._id}}" class="btn btn-outline-light" role="button">See More</a>
+                                <div class="card-body">
+                                    <h6 class="card-text">{{this.name}}</h6>
+                                </div>
+                                <div class="text-center mb-3">
+                                    <a href="/artists/{{this._id}}" class="btn btn-outline-light" role="button">See
+                                        More</a>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}                        
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-    
+    </div>
