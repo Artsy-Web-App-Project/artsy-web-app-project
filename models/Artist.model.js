@@ -10,7 +10,8 @@ const artistSchema = new Schema(
         nationality: String,
         birth: Number,
         death: Number,
-        about: String
+        about: String,
+        image: String
     },
     {
         timestamps: true
