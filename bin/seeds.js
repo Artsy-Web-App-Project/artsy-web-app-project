@@ -7,13 +7,70 @@ const MONGO_URI = process.env.MONGODB_URI || 'mongodb://localhost/artsy-web-app-
 
 const arts = [
     {
-        image: "",
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658321975/atrsy-web-app-project/sagohzb3o24wtlkomguh.jpg",
         title: "The Night Watch",
         description: "It is a group portrait of a militia company. These were groups of able-bodied men who, if the need arose, could be called upon to defend the city or put down riots. The painting depicts the company of Captain Frans Banning Cocq and his lieutenant, Willem van Ruytenburgh, surrounded by sixteen of their men.",
         year: 1642,
-        address: "Fokke Simmonzstraat 50A, 1017TJ, Amsterdam, Netherlands",
+        address: "Museumstraat 1, 1071 XX Amsterdam, Netherlands",
         artist: "Rembrandt Harmenszoon van Rijn"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322256/atrsy-web-app-project/uaoidbplukvsy4x9afht.jpg",
+        title: "The Starry Night",
+        description: "The Starry Night, oil on canvas by Vincent van Gogh, 1889; in the Museum of Modern Art, New York City. History Archive/REX/Shutterstock.com. The oil-on-canvas painting is dominated by a night sky roiling with chromatic blue swirls, a glowing yellow crescent moon, and stars rendered as radiating orbs.",
+        year: 1889,
+        address: "Museumstraat 1, 1071 XX Amsterdam, Netherlands",
+        artist: "Vincent Willem van Gogh"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322416/atrsy-web-app-project/dhkrmbgjzvfbkgum3nfm.jpg",
+        title: "The Bedroom",
+        description: "Van Gogh's Bedroom, or Bedroom in Arles, painting is of a room where one sleeps, and he wanted the painting to put the viewer's mind and imagination at rest. Upon entering the room, there is a bed to the right. Along the wall to the right is a chair, table with water on it, and a window overlooking the street.",
+        year: 1888,
+        address: "Museumstraat 1, 1071 XX Amsterdam, Netherlands",
+        artist: "Vincent Willem van Gogh"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322494/atrsy-web-app-project/ln1ytu23cl2hehgfpinl.jpg",
+        title: "The Birth of Venus",
+        description: "Known as the “Birth of Venus”, the composition actually shows the goddess of love and beauty arriving on land, on the island of Cyprus, born of the sea spray and blown there by the winds, Zephyr and, perhaps, Aura. The goddess is standing on a giant scallop shell, as pure and as perfect as a pearl.",
+        year: 1486,
+        address: "Piazzale degli Uffizi, 6, 50122 Firenze FI, Italy",
+        artist: "Sandro Botticelli"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322546/atrsy-web-app-project/ri7iqisl6bs04m9zleos.jpg",
+        title: "Calumny of Apelles",
+        description: "The Calumny of Apelles is a panel painting in tempera by the Italian Renaissance painter Sandro Botticelli. Based on the description of an lost ancient painting by Apelles.",
+        year: 1495,
+        address: "Piazzale degli Uffizi, 6, 50122 Firenze FI, Italy",
+        artist: "Sandro Botticelli"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322713/atrsy-web-app-project/qdjbilirbcvvcxut1vok.jpg",
+        title: "The Women of Algiers",
+        description: "Les Femmes d'Alger (English: Women of Algiers) is a series of 15 paintings and numerous drawings by the Spanish artist Pablo Picasso. The series, created in 1954–1955, was inspired by Eugène Delacroix's 1834 painting The Women of Algiers in their Apartment",
+        year: 1955,
+        address: "Rue de Rivoli, 75001 Paris, France",
+        artist: "Pablo Ruiz Picasso"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322754/atrsy-web-app-project/ajv0qswvebfkuk7wzlnf.jpg",
+        title: "San Giorgio Maggiore at Dusk",
+        description: "San Giorgio Maggiore al Crepuscolo is approximately two-by-three feet and painted in oil on canvas. It depicts mysterious buildings that seem to magically appear from the surrounding landscape, they almost seem to float in the background. The forms are gently inserted, though not enough to disguise their identity.",
+        year: 1912,
+        address: "Cardiff CF10 3NP, United Kingdom",
+        artist: "Oscar-Claude Monet"
+    },
+    {
+        image: "https://res.cloudinary.com/creatives-around/image/upload/v1658322813/atrsy-web-app-project/hz5rnr2dwdiyljqb1ttf.jpg",
+        title: "Cestello Annunciation",
+        description: "The Cestello Annunciation, is a painting in tempera on panel made in 1489 by Sandro Botticelli. It was painted for the patron Benedetto di Ser Giovanni Guardi to adorn the church of the Florentine monastery of Cestello, which is now known as Santa Maria Maddalena de'Pazzi. The Annunciation. Artist. Sandro Botticelli.",
+        year: 1489,
+        address: "Piazzale degli Uffizi, 6, 50122 Firenze FI, Italy",
+        artist: "Sandro Botticelli"
     }
+
 ];
 
 const artists = [
