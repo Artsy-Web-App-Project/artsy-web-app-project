@@ -83,7 +83,7 @@ router.get("/:artId/edit", isLoggedIn, (req, res, next) => {
                 artistsArr: artistsArr,
                 artDetails: artDetails
             };
-            res.render("arts/art-edit", {user: req.session.user, data: data});
+            res.render("arts/art-edit", {user: req.session.user, artistsArr: artistsArr, artDetails: artDetails});
         })
         .catch((error) => {
             console.log("Error getting art details from DB", error);
