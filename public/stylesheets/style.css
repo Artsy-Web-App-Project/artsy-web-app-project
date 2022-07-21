@@ -28,3 +28,7 @@ h1 {
   width: 100%;
   object-fit: cover;
 }
+
+.text-muted {
+  padding-bottom: 1rem;
+}
