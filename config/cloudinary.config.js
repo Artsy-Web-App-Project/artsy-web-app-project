@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    allowed_formats: ['jpg', 'png'],
+    allowed_formats: ['jpg', 'jpeg', 'png'],
     folder: 'atrsy-web-app-project' // The name of the folder in cloudinary
   }
 });

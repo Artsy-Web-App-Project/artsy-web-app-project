@@ -48,7 +48,6 @@ artSchema.pre("save", async function (next) {
     this.address = undefined;
     next();
   });
-  
 
 const Art = model("Art", artSchema);
 

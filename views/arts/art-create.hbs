@@ -24,7 +24,7 @@
             <div class="row">
               <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="text" name="title" class="form-control" />
+                  <input type="text" name="title" class="form-control" required/>
                   <label class="form-label" for="form3Example1">Title of the art piece</label>
                 </div>
               </div>
@@ -44,26 +44,26 @@
             <div class="row">
               <div class="col-md-3 mb-4">
                 <div class="form-outline">
-                  <input type="number" name="year" min="1300" max="2025" class="form-control" />
-                  <label class="form-label" for="form3Example1">Year of the art</label>
+                  <input type="number" name="year" min="1300" max="2025" class="form-control" required/>
+                  <label class="form-label" for="form3Example1" required>Year of the art</label>
                 </div>
               </div>
 
               <div class="col-md-3 mb-4">
                 <div class="form-outline">
-                  <input type="text" name="address" class="form-control" />
+                  <input type="text" name="address" class="form-control" required/>
                   <label class="form-label" for="form3Example1">Current address of the art</label>
                 </div>
               </div>
               <div class="col-md-3 mb-4">
                 <div class="form-outline">
-                  <input type="text" name="postalcity" class="form-control" />
+                  <input type="text" name="postalcity" class="form-control" required/>
                   <label class="form-label" for="form3Example1">Postal code and city</label>
                 </div>
               </div>
               <div class="col-md-3 mb-4">
                 <div class="form-outline">
-                  <input type="text" name="country" class="form-control" />
+                  <input type="text" name="country" class="form-control" required/>
                   <label class="form-label" for="form3Example1">Country</label>
                 </div>
               </div>
@@ -71,13 +71,13 @@
 
             <!-- -->
             <div class="form-outline mb-4">
-              <input type="file" name="art-image" class="form-control-file form-control" />
+              <input type="file" name="art-image" class="form-control-file form-control" accept="image/png, image/jpeg, image/jpg" required/>
               <label class="form-label" for="form3Example3">Image of the art piece</label>
             </div>
 
             <!-- -->
             <div class="form-outline mb-4">
-              <textarea name="description" cols="30" rows="4" class="form-control"> </textarea>
+              <textarea name="description" cols="30" rows="4" class="form-control" required> </textarea>
               <label class="form-label" for="form3Example4">Description of the art piece</label>
             </div>
 

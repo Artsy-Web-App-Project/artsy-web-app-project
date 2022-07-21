@@ -3,6 +3,7 @@ const Artist = require("../models/Artist.model");
 const User = require("../models/User.model");
 
 const fileUploader = require('../config/cloudinary.config');
+const geocoder = require("../utils/geocoder");
 
 const router = require("express").Router();
 
@@ -91,19 +92,34 @@ router.get("/:artId/edit", (req, res, next) => {
 });
 
 router.post("/:artId/edit", (req, res, next) => {
+    // let totalAddress = `${req.body.address} ${req.body.postalcity} ${req.body.country}`;
+    const { artId } = req.params;
 
-    const {artId} = req.params;
     const artDetails = {
         image: req.body.image,
         title: req.body.title,
         description: req.body.description,
         year: req.body.year,
         artist: req.body.artist,
-        location: req.body.location
+        address: req.body.totalAddress
     };
+    const loc = geocoder.geocode(artDetails.address)
+        .then((loc) => {
+            artDetails.location = {
+                type: "Point",
+                coordinates: [loc[0].longitude, loc[0].latitude],
+                formattedAddress: loc[0].formattedAddress,
+            };
+            artDetails.address = undefined;
+            return artDetails;
+        })
+        .then((artDetails) => {
+            return Art.findByIdAndUpdate(artId, artDetails)
+        })
 
-    Art.findByIdAndUpdate(artId, artDetails)
-        .then (() => {
+
+
+        .then(() => {
             res.redirect(`/arts/${artId}`);
         })
         .catch((error) => {
