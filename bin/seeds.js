@@ -172,6 +172,15 @@ const artists = [
       "Salvador Dalí was a Spanish Surrealist painter and printmaker known for exploring subconscious imagery. Arguably, his most famous painting is The Persistence of Memory (1931), depicting limp melting watches.",
     image: "https://res.cloudinary.com/creatives-around/image/upload/v1658341691/atrsy-web-app-project/oe6eeqdnylnxe9q2yjrj.jpg"
   },
+  {
+    name: "Jean Dominique Antony Metzinger",
+    nationality: "French",
+    birth: 1883,
+    death: 1956,
+    about:
+      "Jean Dominique Antony Metzinger (French: [mɛtsɛ̃ʒe]; 24 June 1883 - 3 November 1956) was a major 20th-century French painter, theorist, writer, critic and poet, who along with Albert Gleizes wrote the first theoretical work on Cubism. His earliest works, from 1900 to 1904, were influenced by the neo-Impressionism of Georges Seurat and Henri-Edmond Cross. Between 1904 and 1907 Metzinger worked in the Divisionist and Fauvist styles with a strong Cézannian component, leading to some of the first proto-Cubist works.",
+    image: "https://res.cloudinary.com/creatives-around/image/upload/v1658390257/atrsy-web-app-project/cdx8ibnspxtxvbnfjbqa.jpg"
+  },
 ];
 
 mongoose
