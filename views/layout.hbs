@@ -48,9 +48,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/arts/create">Add an art piece</a>
           </li>
+          {{#if user}}
           <li class="nav-item">
             <a class="nav-link" href="/auth/user-profile">My Profile</a>
           </li>
+          {{/if}}
         </ul>
 
         {{#unless user}}
