@@ -73,7 +73,7 @@ router.get("/:artId", isLoggedIn, (req, res, next) => {
         });
 });
 
-router.get("/:artId/edit", (req, res, next) => {
+router.get("/:artId/edit", isLoggedIn, (req, res, next) => {
     const {artId} = req.params;
 
     Promise.all([Art.findById(artId), Artist.find()])
@@ -83,7 +83,7 @@ router.get("/:artId/edit", (req, res, next) => {
                 artistsArr: artistsArr,
                 artDetails: artDetails
             };
-            res.render("arts/art-edit", data);
+            res.render("arts/art-edit", {user: req.session.user, data: data});
         })
         .catch((error) => {
             console.log("Error getting art details from DB", error);
