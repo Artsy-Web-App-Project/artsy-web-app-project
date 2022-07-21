@@ -39,7 +39,7 @@ router.get("/create", isLoggedIn, (req, res, next) => {
     
 });
 
-router.post("/create", fileUploader.single('art-image'), (req, res, next) => {
+router.post("/create", fileUploader, (req, res, next) => {
     let totalAddress = `${req.body.address} ${req.body.postalcity} ${req.body.country}`;
     const artDetails = {
         image: req.file.path,
@@ -79,10 +79,6 @@ router.get("/:artId/edit", isLoggedIn, (req, res, next) => {
     Promise.all([Art.findById(artId), Artist.find()])
 
         .then(([artDetails, artistsArr]) => {
-            const data = {
-                artistsArr: artistsArr,
-                artDetails: artDetails
-            };
             res.render("arts/art-edit", {user: req.session.user, artistsArr: artistsArr, artDetails: artDetails});
         })
         .catch((error) => {
