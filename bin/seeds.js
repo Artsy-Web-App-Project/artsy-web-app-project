@@ -21,7 +21,7 @@ const arts = [
       "https://res.cloudinary.com/creatives-around/image/upload/v1658322256/atrsy-web-app-project/uaoidbplukvsy4x9afht.jpg",
     title: "The Starry Night",
     description:
-      "The Starry Night, oil on canvas by Vincent van Gogh, 1889; in the Museum of Modern Art, New York City. History Archive/REX/Shutterstock.com. The oil-on-canvas painting is dominated by a night sky roiling with chromatic blue swirls, a glowing yellow crescent moon, and stars rendered as radiating orbs.",
+      "The Starry Night, oil on canvas by Vincent van Gogh, 1889; in the Museum of Modern Art, New York City. The oil-on-canvas painting is dominated by a night sky roiling with chromatic blue swirls, a glowing yellow crescent moon, and stars rendered as radiating orbs.",
     year: 1889,
     address: "Museumstraat 1, 1071 XX Amsterdam, Netherlands",
     artist: "Vincent Willem van Gogh",
