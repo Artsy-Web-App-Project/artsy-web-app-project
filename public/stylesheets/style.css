@@ -32,3 +32,10 @@ h1 {
 .text-muted {
   padding-bottom: 1rem;
 }
+
+.card:hover, .card:active{
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+  border-radius: 5;
+}
