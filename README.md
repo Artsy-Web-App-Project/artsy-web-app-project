@@ -14,7 +14,7 @@ Aimed to collect works of art from all over the world on a single platform.
 ## Intructions
 - Need to install dependencies `npm install`
 - Need to run the application `npm run dev`
-- Need to create .env file with these variables:
+- Need to create `.env` file with these variables:
     * PORT=3000
     * SESSION_SECRET="YOUR SECRET STRING"
     * NODE_ENV=development
