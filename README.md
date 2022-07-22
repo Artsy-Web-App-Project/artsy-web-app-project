@@ -11,6 +11,19 @@ Aimed to collect works of art from all over the world on a single platform.
 - Include sign up, log in & log out functionality with encrypted passwords and authorization.
 - Implemented all CRUD actions on models.
 
+## Intructions
+- Need to install dependencies `npm install`
+- Need to run the application `npm run dev`
+- Need to create .env file with these variables:
+    * PORT=3000
+    * SESSION_SECRET="YOUR SECRET STRING"
+    * NODE_ENV=development
+    * GEOCODER_PROVIDER=mapquest
+    * GEOCODER_API_KEY="YOUR API KEY"
+    * CLOUDINARY_NAME="YOUR CLOUDINARY NAME"
+    * CLOUDINARY_KEY="YOUR CLOUDINARY KEY"
+    * CLOUDINARY_SECRET="YOUR CLOUDINARY SECRET"
+    * MONGODB_URI="YOUR MONGODB URI" <br>
 
 <img src="./public/images/artsy-home-page.png" style="width:400px; display: block;margin: 0 auto;"><br>
 
